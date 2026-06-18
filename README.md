@@ -93,3 +93,18 @@ Our backend uses Next.js API routes to handle business logic, with Prisma as the
 ## What's next for Creator Intelligence?
 
 In the future, we hope to expand beyond Instagram, integrating with other platforms to provide a unified, privacy-respecting CRM for creators everywhere. We envision Creator Intelligence as a core tool in the creator stack and strive to empower individuals to run their brand with the same data-driven precision, automation, and strategic insight as the world’s top businesses.
+
+
+#Quick set up
+1. Install dependencies (ignore peer dep warnings):
+powershellnpm install --legacy-peer-deps
+2. Create .env.local:
+powershellNew-Item .env.local
+notepad .env.local
+Paste this in and save:
+envDATABASE_URL="file:./dev.db"
+MARTIAN_API_KEY="your-key-here"
+3. Set up the database:
+powershellnpx prisma migrate dev --name init
+4. Run the app:
+powershellnpm run dev
